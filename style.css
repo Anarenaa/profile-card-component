@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  min-height: 100%;
+  background-color: var(--dark-cyan);
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 18px;
+  color: var(--dark-grayish-blue);
+}
+
+.bg-pattern {
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  position: relative;
+}
+.bg-pattern::before,
+.bg-pattern::after {
+  position: absolute;
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  background-size: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.bg-pattern:before {
+  top: 0;
+  left: 0;
+  background: url("./images/bg-pattern-top.svg") no-repeat bottom right;
+}
+.bg-pattern:after {
+  top: 100%;
+  left: 100%;
+  background: url("./images/bg-pattern-bottom.svg") no-repeat top left;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.card {
+  width: 350px;
+  box-shadow: 0 10px 60px hsl(229, 23%, 23%, 0.2);
+  border-radius: 20px;
+}
+.card__bg-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.card__main {
+  background-color: hsl(0, 0%, 100%);
+  position: relative;
+  text-align: center;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.card__avatar {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 5px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+}
+.card__info {
+  padding: 70px 0 25px;
+}
+.card__name-container {
+  display: flex;
+  justify-content: center;
+}
+.card__name {
+  color: var(--very-dark-desaturated-blue);
+  font-weight: 700;
+  margin-right: 10px;
+}
+.card__location {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.card__stats {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid hsl(0, 0%, 59%, 0.5);
+  padding: 24px;
+}
+.stat {
+  text-align: center;
+  list-style: none;
+  flex-basis: 30%;
+}
+.stat__value {
+  font-weight: 700;
+  color: var(--very-dark-desaturated-blue);
+}
+.stat__label {
+  font-size: 10px;
+  margin-top: 4px;
+  letter-spacing: 1px;
+}
